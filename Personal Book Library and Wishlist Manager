@@ -1,0 +1,50 @@
+# قوائم wish list  والمكتبة
+library = [] 
+wish_list_book = [] 
+
+# إدخال أول كتاب في المكتبة
+book_name = input("Enter the name of a book you own:\n")
+library.append(book_name)
+print("Your current library:", library)
+
+# سؤال المستخدم عن كتاب آخر
+book_name = input("Enter the name of another book you own (or press 'Enter' to skip):")
+
+if book_name:
+    library.append(book_name)
+
+# طباعة المكتبة بعد الإضافة
+print("\nYour library:", library)
+
+# قائمة الكتب التي يتمناها المستخدم
+book_name = input("Enter the name of a book you wish to have in the future:\n")
+if book_name:
+    wish_list_book.append(book_name)
+
+# سؤال المستخدم عن كتاب إضافي لقائمة التمني
+book_name = input("Enter the name of another book you wish to have in the future (or press 'Enter' to skip):")
+if book_name:
+    wish_list_book.append(book_name)
+
+# طباعة قائمة التمني بعد الإضافة
+print("\nYour wish list:", wish_list_book)
+
+# سؤال المستخدم عن كتاب من قائمة التمني حصل عليه
+acquired_book = input("Enter the name of a book from your wishlist that you have acquired (or press 'Enter' to skip):")
+
+if acquired_book in wish_list_book:
+    library.append(acquired_book)
+    wish_list_book.remove(acquired_book)
+
+# طباعة القوائم بعد تحديث المكتبة وقائمة التمني
+print("\nYour library now:", library)
+print("\nYour wish list now:", wish_list_book)
+
+# سؤال المستخدم عن كتاب للتبرع به
+donated_book = input("\nEnter the name of a book from your library you wish to donate (or press 'Enter' to skip):")
+
+if donated_book in library:
+    library.remove(donated_book)
+    print("\nFinal list after donation:", library)
+
+    # test the code is running
